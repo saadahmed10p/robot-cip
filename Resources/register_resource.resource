@@ -22,3 +22,14 @@ Enter Last Name
 Enter Email
     [Arguments]    ${email}
     Input Text    ${txt_email}   ${email}
+
+Enter Password
+    [Arguments]    ${password}
+    Input Text    ${txt_password}   ${password}
+
+Enter Confirm Password
+    [Arguments]    ${confirmpassword}
+    Input Text    ${txt_confirmpassword}   ${confirmpassword}
+
+Click Register
+    Click Element    ${btn_register}
