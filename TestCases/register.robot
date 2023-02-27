@@ -37,3 +37,7 @@ User should be able to click Register btn
     ELSE IF    ${error_msg_element}==False
     Log To Console    Hello
     END
+
+User should be able to click continue after registering
+    Page Should Contain    Your registration completed
+    Click Continue

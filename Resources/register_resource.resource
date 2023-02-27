@@ -33,3 +33,6 @@ Enter Confirm Password
 
 Click Register
     Click Element    ${btn_register}
+
+Click Continue
+    Click Element    ${btn_continue}
