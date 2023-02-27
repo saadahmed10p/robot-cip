@@ -17,7 +17,8 @@ User should be able to fill registeration form
     Enter First Name    ${first_name}
     Enter Last Name    ${last_name}
     ${first} =  emails
-    Enter Email    ${first}
+    Set Global Variable    ${FIRST}     ${first}
+    Enter Email    ${First}
     Log To Console    ${first}
     Enter Password    ${password}
     Enter Confirm Password    ${confirm_password}
@@ -28,6 +29,7 @@ User should be able to click Register btn
     ${error_msg_element}=    Run Keyword And Return Status    Page Should Contain    The specified email already exists
     Set Global Variable    ${ERROR_MSG_ELEMENT}    ${error_msg_element}
     ${new}=  Emails
+    Set Global Variable    ${NEW}     ${new}
     Log To Console    error:${error_msg_element}
 
     IF        ${error_msg_element}==True
@@ -45,6 +47,9 @@ User should be able to click Register btn
 User should be able to click continue after registering
     Page Should Contain    Your registration completed
     Click Continue
-    #if condition is to be added
-    ${check_user_email} =   Get Useremail
-    Page Should Contain    ${check_user_email}
+
+    IF    ${ERROR_MSG_ELEMENT}==True
+    Page Should Contain    ${NEW}
+    ELSE IF    ${ERROR_MSG_ELEMENT}==False
+    Page Should Contain    ${FIRST}
+    END
