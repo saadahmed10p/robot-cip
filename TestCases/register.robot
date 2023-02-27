@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Resources/register_resource.resource
+Resource    ../Resources/shop_resource.resource
 Variables    ../TestData/TestData.py
 Variables    ../Utils/variables.py
 Library    ../Utils/randoms.py
@@ -44,5 +45,5 @@ User should be able to click Register btn
 User should be able to click continue after registering
     Page Should Contain    Your registration completed
     Click Continue
-    Log To Console    loogiing:${ERROR_MSG_ELEMENT}
-    Sleep    3seconds
+    ${check_user_email} =   Get Useremail
+    Page Should Contain    ${check_user_email}
