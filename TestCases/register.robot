@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Resource    ../Resources/register_resource.resource
 Variables    ../TestData/TestData.py
+Variables    ../Utils/variables.py
 Library    ../Utils/randoms.py
 
 *** Variables ***
@@ -24,6 +25,7 @@ User should be able to click Register btn
     Click Register
 
     ${error_msg_element}=    Run Keyword And Return Status    Page Should Contain    The specified email already exists
+    Set Global Variable    ${ERROR_MSG_ELEMENT}    ${error_msg_element}
     ${new}=  Emails
     Log To Console    error:${error_msg_element}
 
@@ -33,12 +35,14 @@ User should be able to click Register btn
     Log To Console    new email: ${new}
     Sleep    3seconds
     Click Register
-
     ELSE IF    ${error_msg_element}==False
     Log To Console    Hello
     END
 
+
+
 User should be able to click continue after registering
     Page Should Contain    Your registration completed
     Click Continue
-#comment
+    Log To Console    loogiing:${ERROR_MSG_ELEMENT}
+    Sleep    3seconds
