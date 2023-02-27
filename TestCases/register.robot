@@ -45,5 +45,6 @@ User should be able to click Register btn
 User should be able to click continue after registering
     Page Should Contain    Your registration completed
     Click Continue
+    #if condition is to be added
     ${check_user_email} =   Get Useremail
     Page Should Contain    ${check_user_email}
