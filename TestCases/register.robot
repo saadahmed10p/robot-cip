@@ -48,6 +48,7 @@ User should be able to click continue after registering
     Page Should Contain    Your registration completed
     Click Continue
 
+    #if condition to check username
     IF    ${ERROR_MSG_ELEMENT}==True
     Page Should Contain    ${NEW}
     ELSE IF    ${ERROR_MSG_ELEMENT}==False
