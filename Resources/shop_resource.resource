@@ -18,5 +18,5 @@ Enter recipient email
     Input Text    ${recipient_email}    ${receiver_email}
 
 Get sender name
-    ${name}=  Get Text    ${sender_name}
+    ${name}=  Get Value    ${sender_name}
     RETURN  ${name}
