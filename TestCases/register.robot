@@ -1,10 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    ../Utils/randoms.py
+
 Resource    ../Resources/register_resource.resource
 Resource    ../Resources/shop_resource.resource
+
 Variables    ../TestData/TestData.py
 Variables    ../Utils/variables.py
-Library    ../Utils/randoms.py
+
 
 *** Variables ***
 
@@ -42,8 +45,6 @@ User should be able to click Register btn
     Log To Console    Hello
     END
 
-
-
 User should be able to click continue after registering
     Page Should Contain    Your registration completed
     Click Continue
@@ -54,3 +55,21 @@ User should be able to click continue after registering
     ELSE IF    ${ERROR_MSG_ELEMENT}==False
     Page Should Contain    ${FIRST}
     END
+
+User should be able to add products to cart
+    Click Product 1
+    Wait Until Element Is Visible        ${pdt1_addToCart}
+    Add Product 1 To Cart
+
+    #Check error msg appears
+    Wait Until Page Contains    Enter valid recipient email
+    Enter Recipient Name    ${receiver_name}
+    Enter Recipient Email    ${receiver_email}
+    ${full_name}=   Set Variable    ${first_name} ${last_name}
+
+    #check sender name is prefilled
+    ${sender}=  Get Sender Name
+    Should Be Equal    ${sender}    ${full_name}
+
+
+
