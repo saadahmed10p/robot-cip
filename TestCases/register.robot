@@ -66,10 +66,9 @@ User should be able to add products to cart
     Enter Recipient Name    ${receiver_name}
     Enter Recipient Email    ${receiver_email}
     ${full_name}=   Set Variable    ${first_name} ${last_name}
-    Log To Console    fullnameis:${full_name}
+
     #check sender name is prefilled
     ${sender}=  Get Sender Name
-    Log To Console    sender is:${sender}
     Should Be Equal    ${sender}    ${full_name}
     Sleep    3 seconds
 
