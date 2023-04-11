@@ -47,7 +47,6 @@ Add Produt To Cart
 
 Reset App
     [Documentation]    User should be able to reset app state
-    #Login    ${swag_user}   ${swag_password}
     Click Function    ${add_to_cart_pdt1}
     Reset App State
     Element Should Not Be Visible    ${shp_cart_badge}
