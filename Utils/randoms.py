@@ -1,5 +1,6 @@
 import string
 import random
+from faker import Faker
 
 
 def emails():
@@ -9,3 +10,18 @@ def emails():
     return email
 
 
+def firstname():
+    faker = Faker()
+    name = faker.first_name()
+    return name
+
+
+def lastname():
+    faker = Faker()
+    name = faker.last_name()
+    return name
+
+
+def number():
+    rand_int = random.randint(0, 100)
+    return rand_int
