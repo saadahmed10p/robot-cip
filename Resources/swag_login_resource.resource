@@ -1,5 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Collections
+
 Variables    ../PageObjects/swag_loginpage_locators.py
 Variables    ../TestData/TestData.py
 
@@ -54,11 +56,15 @@ Sort Products by Name Descending Order
     Click Element    ${name_sort_desc}    # Sort again to change the order to descending
     @{product_elements}    Get WebElements    ${prod_names}
     ${last_product}        Set Variable    ${EMPTY}
+    @{product_labels}    Create List
     FOR    ${product}    IN    @{product_elements}
         ${product_name}    Get Text    ${product}
+        Append To List    ${product_labels}    ${product_name}
         Set Global Variable     ${last_product}
         ${last_product}    Run Keyword If    '${product}' == '${product_elements[-1]}'     Set Variable    ${product_name}
     END
+    Log To Console    ${last_product}
+    Log To Console    ${product_labels}
 
 
 #Sort Products by Price in Ascending Order
@@ -76,11 +82,14 @@ Sort Products by Price (Ascending/Descending)
     [Arguments]    ${sorter}
     Click Element    ${sort_container}
     Click Element    ${sorter}    # Sort by price descending order
-    ${product_elements}    Get WebElements    ${prod_prices}
+    @{product_elements}    Get WebElements    ${prod_prices}
     ${last_product_price}    Set Variable    ${EMPTY}
+    @{product_prices}    Create List
     FOR    ${product}    IN    @{product_elements}
         ${product_price}    Get Text    ${product}
+        Append To List    ${product_prices}    ${product_price}
         Set Global Variable    ${last_product_price}
         ${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable    ${product_price}
     END
-
+     Log To Console    ${last_product_price}
+     Log To Console    ${product_prices}
