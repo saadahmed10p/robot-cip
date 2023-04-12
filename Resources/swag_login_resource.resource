@@ -93,3 +93,50 @@ Sort Products by Price (Ascending/Descending)
     END
      Log To Console    ${last_product_price}
      Log To Console    ${product_prices}
+
+
+
+Sort Products by Price or Name (Ascending/Descending)
+    [Arguments]    ${sorter}
+    Click Element    ${sort_container}
+    Click Element    ${sorter}    # Sort by price descending order
+
+    #@{product_elements}    Get WebElements    ${prod_names}
+    #@{product_elements}    Get WebElements    ${prod_prices}
+
+    ${last_product_price}    Set Variable    ${EMPTY}
+    ${last_product}        Set Variable    ${EMPTY}
+
+    #@{product_prices}    Create List
+    #@{product_labels}    Create List
+
+
+    IF  "${sorter}" == "${name_sort_desc}"
+    @{product_elements}    Get WebElements    ${prod_names}
+    @{product_labels}    Create List
+        FOR    ${product}    IN    @{product_elements}
+        ${product_name}    Get Text    ${product}
+        Append To List    ${product_labels}    ${product_name}
+        Set Global Variable     ${last_product}
+        ${last_product}    Run Keyword If    '${product}' == '${product_elements[-1]}'     Set Variable    ${product_name}
+        END
+    Log To Console    ${last_product}
+    Log To Console    ${product_labels}
+
+    ELSE
+    @{product_elements}    Get WebElements    ${prod_prices}
+    @{product_prices}    Create List
+         FOR    ${product}    IN    @{product_elements}
+        ${product_price}    Get Text    ${product}
+        Append To List    ${product_prices}    ${product_price}
+        Set Global Variable    ${last_product_price}
+        ${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable    ${product_price}
+        END
+     Log To Console    ${last_product_price}
+     Log To Console    ${product_prices}
+    END
+
+
+    #Log To Console    ${last_product_price}
+    #Log To Console    ${product_prices}
+    #Log To Console    ${product_names}

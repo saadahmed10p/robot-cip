@@ -25,3 +25,7 @@ def lastname():
 def number():
     rand_int = random.randint(0, 100)
     return rand_int
+
+
+
+

@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Added condition to verify sender name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PageObjects/swag_loginpage_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/PageObjects/swag_loginpage_locators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resources/swag_login_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/swag_login_resource.resource" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/allcart.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/allcart.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCases/swag.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/swag.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/randoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/randoms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
@@ -336,7 +335,42 @@
       <option name="project" value="LOCAL" />
       <updated>1681224987524</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added condition to verify sender name">
+      <created>1681293520521</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681293520521</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added condition to verify sender name">
+      <created>1681299989110</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1681299989110</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added condition to verify sender name">
+      <created>1681300026921</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1681300026921</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added condition to verify sender name">
+      <created>1681300034050</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1681300034050</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added condition to verify sender name">
+      <created>1681300053202</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1681300053202</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,6 +394,7 @@
     <MESSAGE value="Added locators for add to cart for product 1" />
     <MESSAGE value="Added locators fdor name and email of recipient" />
     <MESSAGE value="Added tc for adding product form" />
+    <MESSAGE value="Added condition to print complete list" />
     <MESSAGE value="Added condition to verify sender name" />
     <option name="LAST_COMMIT_MESSAGE" value="Added condition to verify sender name" />
   </component>
