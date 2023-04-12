@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Added condition to verify sender name">
+    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Added condition to make sorting generic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resources/swag_login_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/swag_login_resource.resource" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCases/swag.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/swag.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/randoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/randoms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
@@ -70,7 +69,7 @@
       <recent name="$PROJECT_DIR$/PageObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="Robot.Sort Products by name (Descending Order)">
+  <component name="RunManager" selected="Robot.Sort Products by price (descending order)">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -88,27 +87,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Sort Products by Price High to Low" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
-      <module name="robot-cip" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.10" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.allcart.Sort Products by Price High to Low&quot; ." />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="true" />
-      <option name="MODULE_MODE" value="true" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
@@ -197,13 +175,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="sortings" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+      <module name="robot-cip" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.10" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="robot.run" />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.sortings&quot; ." />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Robot.Sort Products by name (Descending Order)" />
         <item itemvalue="Robot.Sort Products by price (descending order)" />
         <item itemvalue="Robot.Sort Products by price (Ascending order)" />
+        <item itemvalue="Robot.Sort Products by name (Descending Order)" />
+        <item itemvalue="Robot.sortings" />
         <item itemvalue="Robot.sort" />
-        <item itemvalue="Robot.Sort Products by Price High to Low" />
       </list>
     </recent_temporary>
   </component>
@@ -370,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681300053202</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added condition to make sorting generic">
+      <created>1681308495824</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681308495824</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -396,7 +402,8 @@
     <MESSAGE value="Added tc for adding product form" />
     <MESSAGE value="Added condition to print complete list" />
     <MESSAGE value="Added condition to verify sender name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added condition to verify sender name" />
+    <MESSAGE value="Added condition to make sorting generic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added condition to make sorting generic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

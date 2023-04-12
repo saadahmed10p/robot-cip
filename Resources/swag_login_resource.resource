@@ -140,3 +140,20 @@ Sort Products by Price or Name (Ascending/Descending)
     #Log To Console    ${last_product_price}
     #Log To Console    ${product_prices}
     #Log To Console    ${product_names}
+
+
+Sorter
+    [Arguments]    ${sorter}   ${type}
+    Click Element    ${sort_container}
+    Click Element    ${sorter}    # Sort by price descending order
+    @{product_elements}    Get WebElements    ${type}   #${prod_prices}
+    ${last_product}    Set Variable    ${EMPTY}
+    @{products}    Create List
+    FOR    ${product}    IN    @{product_elements}
+        ${product_price}    Get Text    ${product}
+        Append To List    ${products}    ${product_price}
+        Set Global Variable    ${last_product}
+        ${last_product}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable    ${product_price}
+    END
+     Log To Console    ${last_product}
+     Log To Console    ${products}

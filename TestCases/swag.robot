@@ -69,13 +69,21 @@ Sort Products by name (Descending Order)
 Sort Products by price (Ascending order)
     [Documentation]    User should be able to sort products bt price with ascending order
     #Sort Products By Price (Ascending/Descending)    ${prod_price_asc}
-    Sort Products By Price Or Name (Ascending/Descending)    ${prod_price_asc}
-    Should Be True    '${last_product_price}' != '${EMPTY}'
+    #Sort Products By Price Or Name (Ascending/Descending)    ${prod_price_asc}
+    Sorter    ${prod_price_asc}     ${prod_prices}
+    #Should Be True    '${last_product_price}' != '${EMPTY}'
+    Should Be True    '${last_product}' != '${EMPTY}'
 
 
 Sort Products by price (descending order)
     [Documentation]    User should be able to sort products bt price with descending order
     #Sort Products By Price (Ascending/Descending)    ${prod_price_desc}
-    Sort Products By Price Or Name (Ascending/Descending)    ${prod_price_desc}
-    Should Be True    '${last_product_price}' != '${EMPTY}'
+    #Sort Products By Price Or Name (Ascending/Descending)    ${prod_price_desc}
+    Sorter    ${prod_price_desc}     ${prod_prices}
+    #Should Be True    '${last_product_price}' != '${EMPTY}'
+    Should Be True    '${last_product}' != '${EMPTY}'
 
+sortings
+    #Sorter    ${name_sort_desc}     ${prod_names}
+    #Sorter    ${prod_price_asc}     ${prod_prices}
+    #Sorter    ${prod_price_desc}     ${prod_prices}
