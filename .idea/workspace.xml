@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Added condition to verify sender name" />
+    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Added condition to verify sender name">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PageObjects/swag_loginpage_locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/PageObjects/swag_loginpage_locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/swag_login_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/swag_login_resource.resource" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/allcart.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/allcart.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/swag.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/swag.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +71,7 @@
       <recent name="$PROJECT_DIR$/PageObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="Robot.All Products">
+  <component name="RunManager" selected="Robot.Sort Products by name (Descending Order)">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,7 +93,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Add All Products to Cart" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Sort Products by Price High to Low" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,7 +106,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.allcart.Add All Products to Cart&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.allcart.Sort Products by Price High to Low&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -104,7 +114,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="All Products" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Sort Products by name (Descending Order)" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,7 +127,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.All Products&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Sort Products by name (Descending Order)&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -125,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Check Empty Cart" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Sort Products by price (Ascending order)" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,7 +148,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Check Empty Cart&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Sort Products by price (Ascending order)&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -146,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Locked user login" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Sort Products by price (descending order)" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -159,7 +169,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag_negative.Locked user login&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Sort Products by price (descending order)&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -167,7 +177,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Successful login" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="sort" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -180,7 +190,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Successful login&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.sort&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -190,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Robot.All Products" />
-        <item itemvalue="Robot.Add All Products to Cart" />
-        <item itemvalue="Robot.Locked user login" />
-        <item itemvalue="Robot.Check Empty Cart" />
-        <item itemvalue="Robot.Successful login" />
+        <item itemvalue="Robot.Sort Products by name (Descending Order)" />
+        <item itemvalue="Robot.Sort Products by price (descending order)" />
+        <item itemvalue="Robot.Sort Products by price (Ascending order)" />
+        <item itemvalue="Robot.sort" />
+        <item itemvalue="Robot.Sort Products by Price High to Low" />
       </list>
     </recent_temporary>
   </component>
@@ -319,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681224802041</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added condition to verify sender name">
+      <created>1681224987524</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681224987524</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

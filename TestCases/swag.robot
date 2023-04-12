@@ -58,3 +58,21 @@ All Products
     ${cart_count}    Get Text    ${shp_cart_badge}
     #${product_count}    Get Length    @{products}
     Should Be Equal As Integers    ${cart_count}    ${BADGE_COUNT}
+
+Sort Products by name (Descending Order)
+    [Documentation]    User should be able to sort products by names with decending order
+    Sort Products By Name Descending Order
+    Should Be True    '${last_product}' != '${EMPTY}'
+    Log To Console    ${last_product}
+
+Sort Products by price (Ascending order)
+    [Documentation]    User should be able to sort products bt price with ascending order
+    Sort Products By Price (Ascending/Descending)    ${prod_price_asc}
+    Should Be True    '${last_product_price}' != '${EMPTY}'
+    Log To Console    ${last_product_price}
+
+Sort Products by price (descending order)
+    [Documentation]    User should be able to sort products bt price with descending order
+    Sort Products By Price (Ascending/Descending)    ${prod_price_desc}
+    Should Be True    '${last_product_price}' != '${EMPTY}'
+    Log To Console    ${last_product_price}

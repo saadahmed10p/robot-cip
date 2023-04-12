@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230411 19:48:49.290" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230412 14:56:05.757" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot-Cip" source="/home/saad/PycharmProjects/robot-cip">
 <suite id="s1-s1" name="TestCases" source="/home/saad/PycharmProjects/robot-cip/TestCases">
 <suite id="s1-s1-s1" name="Swag" source="/home/saad/PycharmProjects/robot-cip/TestCases/swag.robot">
-<test id="s1-s1-s1-t1" name="All Products" line="56">
+<test id="s1-s1-s1-t1" name="Sort Products by name (Descending Order)" line="62">
 <kw name="Login" library="swag_login_resource" type="SETUP">
 <arg>${swag_user}</arg>
 <arg>${swag_password}</arg>
@@ -12,213 +12,282 @@
 <arg>${URL_sauce}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230411 19:48:49.434" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20230411 19:48:49.433" endtime="20230411 19:48:53.112"/>
+<msg timestamp="20230412 14:56:06.085" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230412 14:56:06.084" endtime="20230412 14:56:09.871"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230411 19:48:53.112" endtime="20230411 19:48:53.216"/>
+<status status="PASS" starttime="20230412 14:56:09.872" endtime="20230412 14:56:09.979"/>
 </kw>
-<status status="PASS" starttime="20230411 19:48:49.433" endtime="20230411 19:48:53.217"/>
+<status status="PASS" starttime="20230412 14:56:06.083" endtime="20230412 14:56:09.979"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username}</arg>
 <arg>${swag_user}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.218" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.217" endtime="20230411 19:48:53.297"/>
+<msg timestamp="20230412 14:56:09.980" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20230412 14:56:09.979" endtime="20230412 14:56:10.151"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${password}</arg>
 <arg>${swag_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.298" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.297" endtime="20230411 19:48:53.366"/>
+<msg timestamp="20230412 14:56:10.153" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20230412 14:56:10.152" endtime="20230412 14:56:10.287"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.366" level="INFO">Clicking element 'id:login-button'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.366" endtime="20230411 19:48:53.423"/>
+<msg timestamp="20230412 14:56:10.289" level="INFO">Clicking element 'id:login-button'.</msg>
+<status status="PASS" starttime="20230412 14:56:10.287" endtime="20230412 14:56:10.413"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Swag Labs</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.423" endtime="20230411 19:48:53.433"/>
+<status status="PASS" starttime="20230412 14:56:10.413" endtime="20230412 14:56:10.436"/>
 </kw>
-<status status="PASS" starttime="20230411 19:48:49.433" endtime="20230411 19:48:53.434"/>
+<status status="PASS" starttime="20230412 14:56:06.083" endtime="20230412 14:56:10.436"/>
 </kw>
-<kw name="Add All Products to Cart" library="swag_login_resource">
+<kw name="Sort Products by Name Descending Order" library="swag_login_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sort_container}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.438" level="INFO">Clicking element 'xpath://*[@class='product_sort_container']'.</msg>
+<status status="PASS" starttime="20230412 14:56:10.437" endtime="20230412 14:56:10.535"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${name_sort_desc}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.537" level="INFO">Clicking element 'xpath://select[@class='product_sort_container']/option[@value='za']'.</msg>
+<status status="PASS" starttime="20230412 14:56:10.536" endtime="20230412 14:56:10.616"/>
+</kw>
 <kw name="Get WebElements" library="SeleniumLibrary">
-<var>@{products}</var>
-<arg>${all_products}</arg>
+<var>@{product_elements}</var>
+<arg>${prod_names}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.443" level="INFO">@{products} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="270ac175-54ac-42c8-9c29-8206c397d93f")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
-<status status="PASS" starttime="20230411 19:48:53.434" endtime="20230411 19:48:53.444"/>
+<msg timestamp="20230412 14:56:10.635" level="INFO">@{product_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="2bc83626-bba6-4f06-9ebc-8853dfb25c87")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20230412 14:56:10.617" endtime="20230412 14:56:10.635"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_product}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230412 14:56:10.637" level="INFO">${last_product} = </msg>
+<status status="PASS" starttime="20230412 14:56:10.635" endtime="20230412 14:56:10.637"/>
 </kw>
 <for flavor="IN">
 <var>${product}</var>
-<value>@{products}</value>
+<value>@{product_elements}</value>
 <iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="270ac175-54ac-42c8-9c29-8206c397d93f")&gt;</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${all_products}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.444" level="INFO">Clicking element 'xpath://div[contains(@class, 'inventory_item')]//button[contains(@class, 'btn_primary') ]'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.444" endtime="20230411 19:48:53.474"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${inv_list}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.474" endtime="20230411 19:48:53.484"/>
-</kw>
-<status status="PASS" starttime="20230411 19:48:53.444" endtime="20230411 19:48:53.484"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="60fdca60-c4a5-4bf3-b8c0-c24ae6fda9c5")&gt;</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${all_products}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.484" level="INFO">Clicking element 'xpath://div[contains(@class, 'inventory_item')]//button[contains(@class, 'btn_primary') ]'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.484" endtime="20230411 19:48:53.509"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${inv_list}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.509" endtime="20230411 19:48:53.516"/>
-</kw>
-<status status="PASS" starttime="20230411 19:48:53.484" endtime="20230411 19:48:53.517"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="2aed2868-4cae-4bd5-9bcd-e93de6ec43f8")&gt;</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${all_products}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.517" level="INFO">Clicking element 'xpath://div[contains(@class, 'inventory_item')]//button[contains(@class, 'btn_primary') ]'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.517" endtime="20230411 19:48:53.551"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${inv_list}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.551" endtime="20230411 19:48:53.555"/>
-</kw>
-<status status="PASS" starttime="20230411 19:48:53.517" endtime="20230411 19:48:53.555"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="02a3200c-bffb-4d4a-acfa-15d2df3a31c9")&gt;</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${all_products}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.556" level="INFO">Clicking element 'xpath://div[contains(@class, 'inventory_item')]//button[contains(@class, 'btn_primary') ]'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.556" endtime="20230411 19:48:53.593"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${inv_list}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.593" endtime="20230411 19:48:53.598"/>
-</kw>
-<status status="PASS" starttime="20230411 19:48:53.556" endtime="20230411 19:48:53.598"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="13244581-78d7-41d6-9137-799f660d871c")&gt;</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${all_products}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.598" level="INFO">Clicking element 'xpath://div[contains(@class, 'inventory_item')]//button[contains(@class, 'btn_primary') ]'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.598" endtime="20230411 19:48:53.624"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${inv_list}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.624" endtime="20230411 19:48:53.631"/>
-</kw>
-<status status="PASS" starttime="20230411 19:48:53.598" endtime="20230411 19:48:53.631"/>
-</iter>
-<iter>
-<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dae995608402c0860de7ff81557d714e", element="4c7bc73e-3315-4fe5-95ea-0d000538e44e")&gt;</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${all_products}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.632" level="INFO">Clicking element 'xpath://div[contains(@class, 'inventory_item')]//button[contains(@class, 'btn_primary') ]'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.632" endtime="20230411 19:48:53.655"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${inv_list}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230411 19:48:53.655" endtime="20230411 19:48:53.659"/>
-</kw>
-<status status="PASS" starttime="20230411 19:48:53.632" endtime="20230411 19:48:53.659"/>
-</iter>
-<status status="PASS" starttime="20230411 19:48:53.444" endtime="20230411 19:48:53.659"/>
-</for>
-<kw name="Get Length" library="BuiltIn">
-<var>${product_count}</var>
-<arg>${products}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20230411 19:48:53.659" level="INFO">Length is 6</msg>
-<msg timestamp="20230411 19:48:53.659" level="INFO">${product_count} = 6</msg>
-<status status="PASS" starttime="20230411 19:48:53.659" endtime="20230411 19:48:53.659"/>
+<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="2bc83626-bba6-4f06-9ebc-8853dfb25c87")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product_name}</var>
+<arg>${product}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.660" level="INFO">${product_name} = Test.allTheThings() T-Shirt (Red)</msg>
+<status status="PASS" starttime="20230412 14:56:10.637" endtime="20230412 14:56:10.660"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
-<arg>${BADGE_COUNT}</arg>
-<arg>${product_count}</arg>
+<arg>${last_product}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230411 19:48:53.660" level="INFO">${BADGE_COUNT} = 6</msg>
-<status status="PASS" starttime="20230411 19:48:53.659" endtime="20230411 19:48:53.660"/>
+<msg timestamp="20230412 14:56:10.661" level="INFO">${last_product} = </msg>
+<status status="PASS" starttime="20230412 14:56:10.660" endtime="20230412 14:56:10.661"/>
 </kw>
-<status status="PASS" starttime="20230411 19:48:53.434" endtime="20230411 19:48:53.660"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${last_product}</var>
+<arg>'${product}' == '${product_elements[-1]}'</arg>
+<arg>Set Variable</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20230412 14:56:10.664" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.662" endtime="20230412 14:56:10.665"/>
 </kw>
+<status status="PASS" starttime="20230412 14:56:10.637" endtime="20230412 14:56:10.665"/>
+</iter>
+<iter>
+<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="dcfdd7a3-c340-449b-8cc8-3024928e2d9f")&gt;</var>
 <kw name="Get Text" library="SeleniumLibrary">
-<var>${cart_count}</var>
-<arg>${shp_cart_badge}</arg>
+<var>${product_name}</var>
+<arg>${product}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.680" level="INFO">${cart_count} = 6</msg>
-<status status="PASS" starttime="20230411 19:48:53.660" endtime="20230411 19:48:53.680"/>
+<msg timestamp="20230412 14:56:10.687" level="INFO">${product_name} = Sauce Labs Onesie</msg>
+<status status="PASS" starttime="20230412 14:56:10.665" endtime="20230412 14:56:10.687"/>
 </kw>
-<kw name="Should Be Equal As Integers" library="BuiltIn">
-<arg>${cart_count}</arg>
-<arg>${BADGE_COUNT}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<msg timestamp="20230411 19:48:53.681" level="INFO">Argument types are:
-&lt;class 'str'&gt;
-&lt;class 'int'&gt;</msg>
-<status status="PASS" starttime="20230411 19:48:53.681" endtime="20230411 19:48:53.681"/>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${last_product}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230412 14:56:10.688" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.687" endtime="20230412 14:56:10.688"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${last_product}</var>
+<arg>'${product}' == '${product_elements[-1]}'</arg>
+<arg>Set Variable</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20230412 14:56:10.690" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.688" endtime="20230412 14:56:10.690"/>
+</kw>
+<status status="PASS" starttime="20230412 14:56:10.665" endtime="20230412 14:56:10.690"/>
+</iter>
+<iter>
+<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="0a4dc603-2c0f-44e9-b261-62b062608024")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product_name}</var>
+<arg>${product}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.710" level="INFO">${product_name} = Sauce Labs Fleece Jacket</msg>
+<status status="PASS" starttime="20230412 14:56:10.690" endtime="20230412 14:56:10.710"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${last_product}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230412 14:56:10.711" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.710" endtime="20230412 14:56:10.711"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${last_product}</var>
+<arg>'${product}' == '${product_elements[-1]}'</arg>
+<arg>Set Variable</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20230412 14:56:10.713" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.711" endtime="20230412 14:56:10.713"/>
+</kw>
+<status status="PASS" starttime="20230412 14:56:10.690" endtime="20230412 14:56:10.713"/>
+</iter>
+<iter>
+<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="0b98e491-1c84-4440-9cba-a77bf2816591")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product_name}</var>
+<arg>${product}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.733" level="INFO">${product_name} = Sauce Labs Bolt T-Shirt</msg>
+<status status="PASS" starttime="20230412 14:56:10.713" endtime="20230412 14:56:10.733"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${last_product}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230412 14:56:10.734" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.733" endtime="20230412 14:56:10.734"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${last_product}</var>
+<arg>'${product}' == '${product_elements[-1]}'</arg>
+<arg>Set Variable</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20230412 14:56:10.736" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.734" endtime="20230412 14:56:10.736"/>
+</kw>
+<status status="PASS" starttime="20230412 14:56:10.713" endtime="20230412 14:56:10.736"/>
+</iter>
+<iter>
+<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="7589c492-d77a-459d-b13d-026c27f11ce7")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product_name}</var>
+<arg>${product}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.757" level="INFO">${product_name} = Sauce Labs Bike Light</msg>
+<status status="PASS" starttime="20230412 14:56:10.736" endtime="20230412 14:56:10.757"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${last_product}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230412 14:56:10.757" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.757" endtime="20230412 14:56:10.758"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${last_product}</var>
+<arg>'${product}' == '${product_elements[-1]}'</arg>
+<arg>Set Variable</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20230412 14:56:10.759" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.758" endtime="20230412 14:56:10.759"/>
+</kw>
+<status status="PASS" starttime="20230412 14:56:10.736" endtime="20230412 14:56:10.759"/>
+</iter>
+<iter>
+<var name="${product}">&lt;selenium.webdriver.remote.webelement.WebElement (session="430100e038b54b97cca34eeca13a7a8c", element="391e661a-f223-4a43-8ef9-bff5da3fc01c")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product_name}</var>
+<arg>${product}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230412 14:56:10.779" level="INFO">${product_name} = Sauce Labs Backpack</msg>
+<status status="PASS" starttime="20230412 14:56:10.760" endtime="20230412 14:56:10.780"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${last_product}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230412 14:56:10.780" level="INFO">${last_product} = None</msg>
+<status status="PASS" starttime="20230412 14:56:10.780" endtime="20230412 14:56:10.780"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${last_product}</var>
+<arg>'${product}' == '${product_elements[-1]}'</arg>
+<arg>Set Variable</arg>
+<arg>${product_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${product_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20230412 14:56:10.782" endtime="20230412 14:56:10.782"/>
+</kw>
+<msg timestamp="20230412 14:56:10.782" level="INFO">${last_product} = Sauce Labs Backpack</msg>
+<status status="PASS" starttime="20230412 14:56:10.780" endtime="20230412 14:56:10.782"/>
+</kw>
+<status status="PASS" starttime="20230412 14:56:10.760" endtime="20230412 14:56:10.783"/>
+</iter>
+<status status="PASS" starttime="20230412 14:56:10.637" endtime="20230412 14:56:10.783"/>
+</for>
+<status status="PASS" starttime="20230412 14:56:10.436" endtime="20230412 14:56:10.783"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>'${last_product}' != '${EMPTY}'</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230412 14:56:10.783" endtime="20230412 14:56:10.784"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${last_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 14:56:10.785" endtime="20230412 14:56:10.785"/>
 </kw>
 <kw name="Logout" library="swag_login_resource" type="TEARDOWN">
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${side_bar_open}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.682" level="INFO">Clicking button 'id:react-burger-menu-btn'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.682" endtime="20230411 19:48:53.717"/>
+<msg timestamp="20230412 14:56:10.786" level="INFO">Clicking button 'id:react-burger-menu-btn'.</msg>
+<status status="PASS" starttime="20230412 14:56:10.786" endtime="20230412 14:56:10.869"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${logout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230411 19:48:53.717" endtime="20230411 19:48:53.948"/>
+<status status="PASS" starttime="20230412 14:56:10.870" endtime="20230412 14:56:11.137"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${logout}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230411 19:48:53.949" level="INFO">Clicking element 'id:logout_sidebar_link'.</msg>
-<status status="PASS" starttime="20230411 19:48:53.949" endtime="20230411 19:48:53.987"/>
+<msg timestamp="20230412 14:56:11.138" level="INFO">Clicking element 'id:logout_sidebar_link'.</msg>
+<status status="PASS" starttime="20230412 14:56:11.138" endtime="20230412 14:56:11.209"/>
 </kw>
 <kw name="Close My Browser" library="swag_login_resource">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230411 19:48:53.987" endtime="20230411 19:48:54.045"/>
+<status status="PASS" starttime="20230412 14:56:11.210" endtime="20230412 14:56:11.277"/>
 </kw>
-<status status="PASS" starttime="20230411 19:48:53.987" endtime="20230411 19:48:54.045"/>
+<status status="PASS" starttime="20230412 14:56:11.209" endtime="20230412 14:56:11.278"/>
 </kw>
-<status status="PASS" starttime="20230411 19:48:53.681" endtime="20230411 19:48:54.045"/>
+<status status="PASS" starttime="20230412 14:56:10.785" endtime="20230412 14:56:11.278"/>
 </kw>
-<doc>User should be able to add all products to cart and verify badge count</doc>
-<status status="PASS" starttime="20230411 19:48:49.433" endtime="20230411 19:48:54.046"/>
+<doc>User should be able to sort products by names with decending order</doc>
+<status status="PASS" starttime="20230412 14:56:06.082" endtime="20230412 14:56:11.278"/>
 </test>
-<status status="PASS" starttime="20230411 19:48:49.303" endtime="20230411 19:48:54.046"/>
+<status status="PASS" starttime="20230412 14:56:05.789" endtime="20230412 14:56:11.280"/>
 </suite>
-<status status="PASS" starttime="20230411 19:48:49.303" endtime="20230411 19:48:54.047"/>
+<status status="PASS" starttime="20230412 14:56:05.786" endtime="20230412 14:56:11.281"/>
 </suite>
-<status status="PASS" starttime="20230411 19:48:49.291" endtime="20230411 19:48:54.048"/>
+<status status="PASS" starttime="20230412 14:56:05.758" endtime="20230412 14:56:11.283"/>
 </suite>
 <statistics>
 <total>
@@ -233,5 +302,6 @@
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230412 14:56:05.737" level="ERROR">Error in file '/home/saad/PycharmProjects/robot-cip/TestCases/allcart.robot' on line 81: Setting 'Arguments' is not allowed with tests or tasks.</msg>
 </errors>
 </robot>

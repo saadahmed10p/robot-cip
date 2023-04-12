@@ -48,3 +48,39 @@ Add All Products to Cart
     END
     ${product_count}    Get Length    ${products}
     Set Global Variable    ${BADGE_COUNT}     ${product_count}
+
+Sort Products by Name Descending Order
+    Click Element    ${sort_container}
+    Click Element    ${name_sort_desc}    # Sort again to change the order to descending
+    @{product_elements}    Get WebElements    ${prod_names}
+    ${last_product}        Set Variable    ${EMPTY}
+    FOR    ${product}    IN    @{product_elements}
+        ${product_name}    Get Text    ${product}
+        Set Global Variable     ${last_product}
+        ${last_product}    Run Keyword If    '${product}' == '${product_elements[-1]}'     Set Variable    ${product_name}
+    END
+
+
+#Sort Products by Price in Ascending Order
+    #Click Element    ${sort_container}
+    #Click Element    ${prod_price_asc}    # Sort by price ascending order
+    #${product_elements}    Get WebElements    ${prod_prices}
+    #${last_product_price}    Set Variable    ${EMPTY}
+    #FOR    ${product}    IN    @{product_elements}
+        #${product_price}    Get Text    ${product}
+        #Set Global Variable     ${last_product_price}
+        #${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable        ${product_price}
+    #END
+
+Sort Products by Price (Ascending/Descending)
+    [Arguments]    ${sorter}
+    Click Element    ${sort_container}
+    Click Element    ${sorter}    # Sort by price descending order
+    ${product_elements}    Get WebElements    ${prod_prices}
+    ${last_product_price}    Set Variable    ${EMPTY}
+    FOR    ${product}    IN    @{product_elements}
+        ${product_price}    Get Text    ${product}
+        Set Global Variable    ${last_product_price}
+        ${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable    ${product_price}
+    END
+
