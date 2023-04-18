@@ -17,7 +17,17 @@ Locked user login
     Login   ${swag_user_locked}    ${swag_password}
     Page Should Contain    Sorry, this user has been locked out.
 
+Checkout Page
+    [Documentation]    User should not be able to move further without filling in contact details
+    Login   ${swag_user}    ${swag_password}
+    Click Function    ${add_to_cart_pdt1}
+    ${count}=   Get Cart Badge
+    Should Be Equal    ${count}    1
+    Click Function    ${shopping_cart}
+    Click Function    ${checkout_btn}
+    Click Function    ${continue_btn}
+    Page Should Contain    Error: First Name is required
+    Logout
 
-
-
-    //div[@class='inventory_list'] / div[@class='inventory_item']
+#robot -d results -i Smoke TestCases/swag.robot
+#robot --include=smoke Testcases/swag.robot

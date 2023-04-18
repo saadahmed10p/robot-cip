@@ -1,4 +1,5 @@
 import string
+import re
 import random
 from faker import Faker
 
@@ -27,5 +28,8 @@ def number():
     return rand_int
 
 
-
-
+def amount_extract(amount_text):
+    # amount_text = "$29.99"
+    amount_numeric = float(re.sub(r'[^\d.]+', '', amount_text))
+    # print(amount_numeric)  # Output: 29.99
+    return amount_numeric

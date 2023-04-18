@@ -17,7 +17,7 @@ Successful login
     [Documentation]    Verify successful login with valid credentials
     [Tags]             Smoke
     #Login    ${swag_user}   ${swag_password}
-    #Logout
+    #Logoutttt
     Log To Console    Exceuted test case
 
 Check Empty Cart
@@ -62,7 +62,8 @@ All Products
 Sort Products by name (Descending Order)
     [Documentation]    User should be able to sort products by names with decending order
     #Sort Products By Name Descending Order
-    Sort Products By Price Or Name (Ascending/Descending)    ${name_sort_desc}
+    #Sort Products By Price Or Name (Ascending/Descending)    ${name_sort_desc}
+    Sorter    ${name_sort_desc}     ${prod_names}
     Should Be True    '${last_product}' != '${EMPTY}'
 
 
@@ -84,6 +85,52 @@ Sort Products by price (descending order)
     Should Be True    '${last_product}' != '${EMPTY}'
 
 sortings
-    #Sorter    ${name_sort_desc}     ${prod_names}
+    #Sorter1    ${name_sort_desc}     ${prod_names}
     #Sorter    ${prod_price_asc}     ${prod_prices}
     #Sorter    ${prod_price_desc}     ${prod_prices}
+
+Shopping Cart
+    [Documentation]    User should be able verify items in cart
+    Click Function    ${add_to_cart_pdt1}
+    ${count}=   Get Cart Badge
+    Should Be Equal    ${count}    1
+    Click Function    ${shopping_cart}
+    Page Should Contain    Sauce Labs Backpack
+
+Checkout Page
+    [Documentation]    User should be able verify Products appear on the checkout page
+    Click Function    ${add_to_cart_pdt1}
+    ${count}=   Get Cart Badge
+    Should Be Equal    ${count}    1
+    Click Function    ${shopping_cart}
+    Page Should Contain    Sauce Labs Backpack
+    Click Function    ${checkout_btn}
+
+Checkout Page: verify bill
+    [Documentation]    User should be able verify total billed amount
+    Click Function    ${add_to_cart_pdt1}
+    ${count}=   Get Cart Badge
+    Should Be Equal    ${count}    1
+    Click Function    ${shopping_cart}
+    Page Should Contain    Sauce Labs Backpack
+    Click Function    ${checkout_btn}
+
+    Enter Checkout User Info
+    Click Function    ${continue_btn}
+
+    ${print}    Get Product Price
+    ${tax}      Get Tax Amount
+
+    Log To Console    Product Price: ${print}
+    Log To Console    Tax: ${tax}
+
+    ${bill}     Calcbill
+    Log To Console    Bill is: ${bill}
+    #${bill}     Bill
+    ${tot_bill}     Get Total Amount
+    Log To Console    Fetched Amount is: ${tot_bill}
+
+    Should Be Equal    ${bill}     ${tot_bill}
+    Click Function    ${finish_btn}
+
+    Page Should Contain    Thank you for your order!
