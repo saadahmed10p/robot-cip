@@ -1,6 +1,7 @@
 import string
 import re
 import random
+import csv
 from faker import Faker
 
 
@@ -33,3 +34,14 @@ def amount_extract(amount_text):
     amount_numeric = float(re.sub(r'[^\d.]+', '', amount_text))
     # print(amount_numeric)  # Output: 29.99
     return amount_numeric
+
+
+def get_row_data(file_path):
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        # Skip header row
+        next(reader)
+        # Fetch first row data
+        row_data = next(reader)
+        # Return data without quotes or brackets
+        return [data.strip() for data in row_data]
