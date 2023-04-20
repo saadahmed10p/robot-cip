@@ -1,15 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    ../Utils/randoms.py
-
+Library    JSONLIBRARY
 Resource    ../Resources/swag_login_resource.resource
 
 Variables    ../Utils/variables.py
 
-Test Setup  Login    ${swag_user}   ${swag_password}
+Test Setup  Login   ${user}           #${swag_user}   ${swag_password}
 Test Teardown   Logout
-
-*** Variables ***
 
 
 *** Test Cases ***
@@ -84,7 +82,7 @@ Sort Products by price (descending order)
     #Should Be True    '${last_product_price}' != '${EMPTY}'
     Should Be True    '${last_product}' != '${EMPTY}'
 
-sortings
+#sortings
     #Sorter1    ${name_sort_desc}     ${prod_names}
     #Sorter    ${prod_price_asc}     ${prod_prices}
     #Sorter    ${prod_price_desc}     ${prod_prices}

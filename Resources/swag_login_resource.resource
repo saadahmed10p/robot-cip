@@ -1,11 +1,15 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    Collections
 Library    ../Utils/randoms.py
 Library    re
-
+Library     JSONLibrary
+Library    OperatingSystem
+Library    Collections
 Variables    ../PageObjects/swag_loginpage_locators.py
 Variables    ../TestData/TestData.py
+
+*** Variables ***
+${config_file}    TestData/Users.json
 
 *** Keywords ***
 Open My Browser
@@ -15,13 +19,35 @@ Open My Browser
 Close My Browser
     Close Browser
 
+#Login
+#    [Arguments]    ${swag_user}   ${swag_password}
+#    Open My Browser
+#    Input Text    ${username}   ${swag_user}
+#    Input Text    ${password}   ${swag_password}
+#    Click Element   ${login_btn}
+#    Wait Until Page Contains        Swag Labs
+
+Get User Credentials
+    [Arguments]    ${user}
+    ${user_config_file}=    Set Variable    ${CURDIR}/../TestData/Users.json
+    ${user_data}=    Evaluate    json.load(open('${user_config_file}'))    json
+    ${user_key}=    Set Variable    ${user}
+    ${username}=    Set Variable    ${user_data['users']['${user_key}']['username']}
+    ${password}=    Set Variable    ${user_data['users']['${user_key}']['password']}
+    [Return]    ${username}    ${password}
+
 Login
-    [Arguments]    ${swag_user}   ${swag_password}
+    [Arguments]    ${user}
+    ${username_txt}=    Set Variable    id:user-name
+    ${password_txt}=    Set Variable    id:password
+    ${login_btn}=    Set Variable    id:login-button
+    ${username}    ${password}=  Get User Credentials  ${user}
     Open My Browser
-    Input Text    ${username}   ${swag_user}
-    Input Text    ${password}   ${swag_password}
-    Click Element   ${login_btn}
-    Wait Until Page Contains        Swag Labs
+    Input Text    ${username_txt}    ${username}
+    Input Text    ${password_txt}    ${password}
+    Click Button    ${login_btn}
+    Wait Until Page Contains    Swag Labs
+
 
 Logout
     Click Button        ${side_bar_open}
@@ -86,21 +112,21 @@ Add All Products to Cart
         #${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable        ${product_price}
     #END
 
-Sort Products by Price (Ascending/Descending)
-    [Arguments]    ${sorter}
-    Click Element    ${sort_container}
-    Click Element    ${sorter}    # Sort by price descending order
-    @{product_elements}    Get WebElements    ${prod_prices}
-    ${last_product_price}    Set Variable    ${EMPTY}
-    @{product_prices}    Create List
-    FOR    ${product}    IN    @{product_elements}
-        ${product_price}    Get Text    ${product}
-        Append To List    ${product_prices}    ${product_price}
-        Set Global Variable    ${last_product_price}
-        ${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable    ${product_price}
-    END
-     Log To Console    ${last_product_price}
-     Log To Console    ${product_prices}
+#Sort Products by Price (Ascending/Descending)
+#    [Arguments]    ${sorter}
+#    Click Element    ${sort_container}
+#    Click Element    ${sorter}    # Sort by price descending order
+#    @{product_elements}    Get WebElements    ${prod_prices}
+#    ${last_product_price}    Set Variable    ${EMPTY}
+#    @{product_prices}    Create List
+#    FOR    ${product}    IN    @{product_elements}
+#        ${product_price}    Get Text    ${product}
+#        Append To List    ${product_prices}    ${product_price}
+#        Set Global Variable    ${last_product_price}
+#        ${last_product_price}   Run Keyword If    '${product}' == '${product_elements[-1]}'    Set Variable    ${product_price}
+#    END
+#     Log To Console    ${last_product_price}
+#     Log To Console    ${product_prices}
 
 #Sort Products by Price or Name (Ascending/Descending)
     #[Arguments]    ${sorter}
@@ -240,3 +266,4 @@ Get Total Amount
     #[Arguments]    ${amount_text}
     #${amount_numeric}    Convert To Number    ${amount_text.replace('[^\\d.]+', '')}
     #[Return]    ${amount_numeric}
+
