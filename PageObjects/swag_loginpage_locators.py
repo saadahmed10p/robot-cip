@@ -1,5 +1,5 @@
-username = "id:user-name"
-password = "id:password"
+username_txt = "id:user-name"
+password_txt = "id:password"
 first_name_txt = "id:first-name"
 last_name_txt = "id:last-name"
 zip_txt = "id:postal-code"
