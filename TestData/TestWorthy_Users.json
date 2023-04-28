@@ -1,0 +1,16 @@
+{
+    "users": {
+        "user1": {
+            "username": "saad.ahmed@10pearls.com",
+            "password": "10PEarls1+"
+        },
+        "user2": {
+            "username": "dummy@10pearls.com",
+            "password": "10PEarls1+"
+        },
+        "user3": {
+            "username": "",
+            "password": ""
+        }
+    }
+}

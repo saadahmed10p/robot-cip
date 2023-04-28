@@ -1,0 +1,6 @@
+email_txt = "id:Email"
+password_txt = "id:Password"
+login_btn = "id:btnLogin"
+header_dropdown = "id:dropdownMenuLinkMainHeader"
+logout_element = "xpath://a[@data-target='#logoutModal']"
+logout_btn = "xpath://button[@type='button' and contains(text(), 'Log Out')]"
