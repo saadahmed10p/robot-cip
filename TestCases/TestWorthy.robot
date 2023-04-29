@@ -27,3 +27,12 @@ Test Plan
     [Tags]             Regression
     Verify Test Plan Button For All Projects
     Page Should Contain    Recent Activity
+
+Add Milestone
+    [Documentation]    Verify adding a milestone
+    [Tags]             Regression
+    Navigate To Milestone Tab    ${project_finstreet}
+    Adding A Milestone
+    ${date_check}=  Get Date(dmy)
+    Log To Console    ${date_check}
+    Wait Until Page Contains        ${date_check}

@@ -4,6 +4,7 @@ Library    ../Utils/randoms.py
 Library     JSONLibrary
 Library    OperatingSystem
 Library    Collections
+Library  DateTime
 
 Variables    ../PageObjects/TestWorthy_locators.py
 Variables    ../TestData/TestWorthy_TestData.py
@@ -130,3 +131,29 @@ Verify Test Plan Button for All Projects
         Click Element    ${back_to_dashboard}
         Wait Until Element Is Visible    ${PROJECT_XPATH}
     END
+
+Navigate to Milestone Tab
+    [Arguments]    ${project_name}
+    Wait Until Page Contains Element    ${project_name}
+    Click Element    ${project_name}
+    Click Element   ${milestone_tab}
+    Page Should Contain    Add Milestone
+
+Adding a Milestone
+    Wait Until Page Contains Element    ${add_milestone_btn}
+    Click Button    ${add_milestone_btn}
+    Wait Until Element Is Visible            ${milestone_name_txt}
+    Input Text    ${milestone_name_txt}     ${milestone_name}
+    ${desc}=    Get Random String
+    Input Text  ${milestone_desc_txt}   ${desc}
+    ${start_date}=    get current date     result_format=%m/%d/%Y
+    ${end_date}=    get current date     result_format=%m/%d/%Y     increment=+1 day
+    Input Text    id:dpStartDate    ${start_date}
+    Input Text    id:dpEndDate      ${end_date}
+    Click Element    ${add_milestone_btnConfirm}
+    Wait Until Page Contains    Milestones
+    Wait Until Element Is Visible   ${header_dropdown}
+
+Get Date(dmy)
+    ${date}=    Get Current Date    result_format=%d/%m/%y
+    [Return]    ${date}
