@@ -4,6 +4,6 @@ valid_username = "saad.ahmed@10pearls.com"
 invalid_username = "dummy@10pearls.com"
 valid_password = "10PEarls1+"
 browser = "chrome"
-
+milestone_name = "Robot milestone"
 ###### Assertion Messages  #######
 invalid_creds_msg = "Incorrect email address and / or password."
