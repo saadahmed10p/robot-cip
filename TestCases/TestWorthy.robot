@@ -21,3 +21,9 @@ Successful login
     [Documentation]    Verify successful login with valid credentials
     [Tags]             Regression
     Wait Until Page Contains        ${msg}[3]
+
+Test Plan
+    [Documentation]    Verify Add Test plan button on test plan widget when no test plan exist
+    [Tags]             Regression
+    Verify Test Plan Button For All Projects
+    Page Should Contain    Recent Activity
