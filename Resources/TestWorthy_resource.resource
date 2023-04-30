@@ -170,3 +170,5 @@ Editing a Milestone
     Wait Until Element Is Visible   ${edit_mile_confirm_btn}
     Click Button    ${edit_mile_confirm_btn}
     Wait Until Element Is Visible   ${edit_mile_btn}
+    Page Should Contain    Milestone Updated
+    Wait Until Page Contains    ${header_dropdown}
