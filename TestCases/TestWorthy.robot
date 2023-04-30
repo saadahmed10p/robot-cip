@@ -1,11 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    ../Utils/randoms.py
+Library    ../PageObjects/TestWorthy_locators.py
 
 Resource    ../Resources/TestWorthy_resource.resource
 
 Test Setup  Login   ${user}      #${valid_username}   ${valid_password}
-Test Teardown   Logout
+#Test Teardown   Logout
 
 *** Variables ***
 ${csv_file}    TestData/expected_errors.csv
@@ -36,3 +37,13 @@ Add Milestone
     ${date_check}=  Get Date(dmy)
     Log To Console    ${date_check}
     Wait Until Page Contains        ${date_check}
+
+Edit Milestone
+    [Documentation]    Verify Editing a milestone
+    [Tags]             Regression
+    Navigate To Milestone Tab    ${project_finstreet}
+    Adding A Milestone
+    #Sleep    3 seconds
+    Editing A Milestone
+    Page Should Contain    ${updated_mile}
+

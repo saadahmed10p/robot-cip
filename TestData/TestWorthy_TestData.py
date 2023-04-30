@@ -7,3 +7,4 @@ browser = "chrome"
 milestone_name = "Robot milestone"
 ###### Assertion Messages  #######
 invalid_creds_msg = "Incorrect email address and / or password."
+updated_mile = "Milestone Updated"

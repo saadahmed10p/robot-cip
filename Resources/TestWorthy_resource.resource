@@ -157,3 +157,16 @@ Adding a Milestone
 Get Date(dmy)
     ${date}=    Get Current Date    result_format=%d/%m/%y
     [Return]    ${date}
+
+Editing a Milestone
+    Wait Until Page Contains Element    ${created_mile}
+    Click Element    ${created_mile}
+    Page Should Contain    ${milestone_name}
+    Wait Until Page Contains Element    ${edit_mile_btn}
+    Click Element    ${edit_mile_btn}
+    Wait Until Element Is Visible    ${milestone_name_txt}
+    Clear Element Text    ${milestone_name_txt}
+    Input Text    ${milestone_name_txt}     ${updated_mile}
+    Wait Until Element Is Visible   ${edit_mile_confirm_btn}
+    Click Button    ${edit_mile_confirm_btn}
+    Wait Until Element Is Visible   ${edit_mile_btn}
