@@ -6,7 +6,7 @@ Library    ../PageObjects/TestWorthy_locators.py
 Resource    ../Resources/TestWorthy_resource.resource
 
 Test Setup  Login   ${user}      #${valid_username}   ${valid_password}
-#Test Teardown   Logout
+Test Teardown   Logout
 
 *** Variables ***
 ${csv_file}    TestData/expected_errors.csv
@@ -45,5 +45,34 @@ Edit Milestone
     Adding A Milestone
     #Sleep    3 seconds
     Editing A Milestone
-    Page Should Contain    ${updated_mile}
 
+Delete Milestone
+    [Documentation]    Verify Deleting a milestone
+    [Tags]             Regression
+    Navigate To Milestone Tab    ${project_finstreet}
+    Adding A Milestone
+    Sleep    2 seconds
+    ${count}    Count Matching XPaths    //*[text()="Robot milestone"]
+    Log To Console    ${count}
+#    ${count}=   Get Matching Xpath Count    //*[contains(text(), "Robot milestone")]
+#    Log  ${count}  # Prints the number of matching elements with text "Robot milestone"
+    #${li_count_before}=    Get Element Count    xpath:(//ul)[8]/li
+    #Log To Console       ${li_count_before} li elements found in the UL
+    Wait Until Page Contains Element    ${created_mile}
+    Click Element    ${created_mile}
+    Wait Until Page Contains Element    id:optionsEllipsis
+    Click Element    id:optionsEllipsis
+    Wait Until Page Contains Element    xpath://a[@class='dropdown-item' and @milestone-name='Robot milestone']//img[@src='/new-assets/images/trash.png']
+    Click Element    xpath://a[@class='dropdown-item' and @milestone-name='Robot milestone']//img[@src='/new-assets/images/trash.png']
+    Sleep    3 seconds
+    Wait Until Page Contains    Confirmation
+    Click Element    id:btnDeleteMilestone
+    Sleep    3 seconds
+    Page Should Contain     Milestone Deleted
+    Go Back
+    Wait Until Page Contains Element    xpath:(//ul)[8]/li
+#    ${li_count_after}=    Get Element Count    xpath:(//ul)[8]/li
+#    Log To Console       ${li_count_after} li elements found in the UL
+    ${count_after}    Count Matching XPaths    //*[text()="Robot milestone"]
+    Log To Console    ${count_after}
+    Should Not Be Equal    ${count}   ${count_after}

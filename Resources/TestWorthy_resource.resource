@@ -159,6 +159,7 @@ Get Date(dmy)
     [Return]    ${date}
 
 Editing a Milestone
+    Sleep    2 seconds
     Wait Until Page Contains Element    ${created_mile}
     Click Element    ${created_mile}
     Page Should Contain    ${milestone_name}
@@ -170,5 +171,10 @@ Editing a Milestone
     Wait Until Element Is Visible   ${edit_mile_confirm_btn}
     Click Button    ${edit_mile_confirm_btn}
     Wait Until Element Is Visible   ${edit_mile_btn}
+    Sleep    2 seconds
     Page Should Contain    Milestone Updated
-    Wait Until Page Contains    ${header_dropdown}
+
+Count Matching XPaths
+    [Arguments]    ${xpath_expression}
+    ${elements}    Get WebElements    xpath=${xpath_expression}
+    [Return]    ${elements.__len__()}
