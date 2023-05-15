@@ -5,8 +5,12 @@
             "password": "secret_sauce"
         },
         "user2": {
-            "username": "user2",
-            "password": "password2"
+            "username": "standard_userr",
+            "password": "secret_saucer"
+        },
+        "user3": {
+            "username": "locked_out_user",
+            "password": "secret_sauce"
         }
     }
 }
