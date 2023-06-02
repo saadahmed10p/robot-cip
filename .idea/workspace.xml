@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Added condition to make sorting generic">
+    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/TestWorthy_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/TestWorthy_resource.resource" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resources/swag_login_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/swag_login_resource.resource" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/swag.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/swag.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/TestWorthy.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/TestWorthy.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/TestWorthy_Negative.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/TestWorthy_Negative.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/allcart.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/allcart.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/api.robot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/fire.robot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/test.robot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/randoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/randoms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
@@ -43,6 +49,15 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/PageObjects/swag_loginpage_locators.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Resources/swag_login_resource.resource" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TestCases/allcart.robot" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TestCases/fire.robot" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TestData/TestData.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Utils/randoms.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Utils/variables.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,20 +71,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/saad/Downloads/ChatGPT-2.1.13-222.231.zip&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.obiscr.chatgpt.settings.ChatGPT&quot;
+    &quot;last_opened_file_path&quot;: &quot;/home/saad/PycharmProjects/robot-cip&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Utils" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/TestData" />
+      <recent name="$PROJECT_DIR$/Utils" />
       <recent name="$PROJECT_DIR$/TestCases" />
       <recent name="$PROJECT_DIR$/Resources" />
-      <recent name="$PROJECT_DIR$/PageObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="Robot.Sort Products by price (descending order)">
+  <component name="RunManager" selected="Robot.Login Test">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Sort Products by name (Descending Order)" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="API Test Example" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -104,7 +119,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Sort Products by name (Descending Order)&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.api.API Test Example&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -112,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Sort Products by price (Ascending order)" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Create Tessst Suite" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,7 +140,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Sort Products by price (Ascending order)&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.api.Create Tessst Suite&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -133,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Sort Products by price (descending order)" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Create Test Suite" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -146,7 +161,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.Sort Products by price (descending order)&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.api.Create Test Suite&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -154,7 +169,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sort" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Example Test Case" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -167,7 +182,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.sort&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.api.Example Test Case&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -175,7 +190,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sortings" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+    <configuration name="Login Test" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
       <module name="robot-cip" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -188,7 +203,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="robot.run" />
-      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.swag.sortings&quot; ." />
+      <option name="PARAMETERS" value="--test &quot;robot-cip.TestCases.api.Login Test&quot; ." />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="true" />
@@ -198,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Robot.Sort Products by price (descending order)" />
-        <item itemvalue="Robot.Sort Products by price (Ascending order)" />
-        <item itemvalue="Robot.Sort Products by name (Descending Order)" />
-        <item itemvalue="Robot.sortings" />
-        <item itemvalue="Robot.sort" />
+        <item itemvalue="Robot.Login Test" />
+        <item itemvalue="Robot.API Test Example" />
+        <item itemvalue="Robot.Example Test Case" />
+        <item itemvalue="Robot.Create Tessst Suite" />
+        <item itemvalue="Robot.Create Test Suite" />
       </list>
     </recent_temporary>
   </component>
@@ -376,7 +391,147 @@
       <option name="project" value="LOCAL" />
       <updated>1681308495824</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added condition to make sorting generic more">
+      <created>1681311546567</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1681311546567</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added condition to">
+      <created>1681836584321</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681836584321</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added condition to fetch data from csv">
+      <created>1681900944090</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1681900944090</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added condition to fetch data from json">
+      <created>1681998526019</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1681998526019</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added condition to fetch data from json">
+      <created>1681998549968</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1681998549968</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added condition to fetch data from json">
+      <created>1681998587626</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1681998587626</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added Testworthy testcases for login">
+      <created>1682687796363</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1682687796364</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added Testworthy testcases for login">
+      <created>1682687833827</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1682687833827</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added Testworthy testcases for login">
+      <created>1682687850407</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1682687850407</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Added Testworthy testcases for login">
+      <created>1682687958071</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1682687958071</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added Testworthy testcases for testplan button">
+      <created>1682767945639</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1682767945639</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added Testworthy testcases for testplan button">
+      <created>1682768017725</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1682768017725</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added Testworthy testcases for adding milestone">
+      <created>1682791672247</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1682791672247</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added Testworthy testcases for adding milestone">
+      <created>1682872155197</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1682872155197</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added Testworthy testcases for editing milestone">
+      <created>1682872184614</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1682872184614</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Added Testworthy testcases for editing milestone">
+      <created>1682872287914</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1682872287914</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Added Testworthy testcases for editing milestone">
+      <created>1682873451570</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1682873451570</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Added Testworthy testcases for deleting milestone">
+      <created>1682946039993</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1682946039993</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added Testworthy testcases">
+      <created>1684145508519</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1684145508519</updated>
+    </task>
+    <task id="LOCAL-00043" summary="cleanup">
+      <created>1685689924878</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1685689924878</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -403,7 +558,18 @@
     <MESSAGE value="Added condition to print complete list" />
     <MESSAGE value="Added condition to verify sender name" />
     <MESSAGE value="Added condition to make sorting generic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added condition to make sorting generic" />
+    <MESSAGE value="Added condition to make sorting generic more" />
+    <MESSAGE value="Added condition to" />
+    <MESSAGE value="Added condition to fetch data from csv" />
+    <MESSAGE value="Added condition to fetch data from json" />
+    <MESSAGE value="Added Testworthy testcases for login" />
+    <MESSAGE value="Added Testworthy testcases for testplan button" />
+    <MESSAGE value="Added Testworthy testcases for adding milestone" />
+    <MESSAGE value="Added Testworthy testcases for editing milestone" />
+    <MESSAGE value="Added Testworthy testcases for deleting milestone" />
+    <MESSAGE value="Added Testworthy testcases" />
+    <MESSAGE value="cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

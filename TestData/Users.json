@@ -12,5 +12,10 @@
             "username": "locked_out_user",
             "password": "secret_sauce"
         }
+    },
+    "env": {
+        "prod": {
+            "url": "https://testworthy.us/login"
+        }
     }
 }

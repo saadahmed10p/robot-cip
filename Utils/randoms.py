@@ -61,15 +61,8 @@ def get_random_string():
     # choose from all lowercase letter
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(30))
-    # print("Random string of length", length, "is:", result_str)
     return result_str
 
-
-# def get_input_value(url, name):
-#     page = requests.get(url, timeout=5)
-#     soup = BeautifulSoup(page.text, 'html.parser')
-#     input_tag = soup.find('input', {'name': name})
-#     return input_tag['value'] if input_tag else None
 
 def get_token_value(url):
     page = requests.get(url, timeout=5)

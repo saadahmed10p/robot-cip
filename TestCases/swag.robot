@@ -1,7 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    ../Utils/randoms.py
-Library    JSONLIBRARY
+Library     JSONLibrary
+Library    OperatingSystem
+Library    Collections
 Resource    ../Resources/swag_login_resource.resource
 
 Variables    ../Utils/variables.py
@@ -9,6 +11,10 @@ Variables    ../Utils/variables.py
 Test Setup  Login   ${user}           #${swag_user}   ${swag_password}
 Test Teardown   Logout
 
+
+*** Variables ***
+
+#robot -v user:user1 TestCases/swag.robot
 
 *** Test Cases ***
 Successful login

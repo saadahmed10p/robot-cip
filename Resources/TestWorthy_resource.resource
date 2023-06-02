@@ -7,7 +7,7 @@ Library    Collections
 Library  DateTime
 Library    JSONLibrary
 Library  RequestsLibrary
-#Library  XML
+
 Library  BeautifulSoup
 Library  BuiltIn
 Library  String
@@ -17,7 +17,7 @@ Variables    ../PageObjects/TestWorthy_locators.py
 Variables    ../TestData/TestWorthy_TestData.py
 
 *** Variables ***
-#${config_file}    TestData/TestWorthy_Users.json
+
 ${csv_file}    TestData/expected_errors.csv
 ${msg}=  Get Row Data   ${csv_file}
 
@@ -34,19 +34,21 @@ ${test_names}      abc
 
 *** Keywords ***
 Open My Browser
+    [Arguments]    ${URL}
     Open Browser    ${URL}  ${browser}
     Maximize Browser Window
 
 Close My Browser
     Close Browser
 
-#Login
-#    [Arguments]    ${username}   ${password}
-#    Open My Browser
-#    Input Text    ${email_txt}   ${username}
-#    Input Text    ${password_txt}   ${password}
-#    Click Element   ${login_btn}
 
+Get Env
+    [Arguments]    ${env}
+    ${user_config_file}=    Set Variable    ${CURDIR}/../TestData/TestWorthy_Users.json
+    ${user_data}=    Evaluate    json.load(open('${user_config_file}'))    json
+    ${user_key}=    Set Variable    ${env}
+    ${environment}=    Set Variable    ${user_data['env']['${user_key}']['url']}
+    [Return]    ${environment}
 
 Get User Credentials
     [Arguments]    ${user}
@@ -58,12 +60,13 @@ Get User Credentials
     [Return]    ${username}    ${password}
 
 Login
-    [Arguments]    ${user}
+    [Arguments]    ${user}  ${env}
     ${username_txt}=    Set Variable    ${email_txt}
     ${password_txt}=    Set Variable    ${password_txt}
     ${login_btn}=    Set Variable    ${login_btn}
     ${username}    ${password}=  Get User Credentials  ${user}
-    Open My Browser
+    ${env}=     Get Env     ${env}
+    Open My Browser     ${env}
     Input Text    ${username_txt}    ${username}
     Input Text    ${password_txt}    ${password}
     Click Button    ${login_btn}
@@ -99,29 +102,6 @@ Find Text In All Projects
         Should Be True    ${text_found}
         [Return]    ${project_name}
     END
-
-#Verify Text on Test Plan Tab for All Projects
-#    Wait Until Page Contains Element    xpath://h6[@class='font-weight-bold mr-1' ]
-#    ${project_count_txt}    Get Text    xpath://h6[@class='font-weight-bold mr-1' ]
-#    ${project_count}=  Convert To Integer    ${project_count_txt}
-#    Log To Console    aa:${project_count}
-#    Wait Until Element Is Visible    ${PROJECT_XPATH}
-#    FOR    ${i}    IN RANGE    1    ${project_count}+1
-#        ${project_links} =    Get WebElements    ${PROJECT_XPATH}
-#        ${project_link} =    Set Variable    ${project_links[${i}-1]}
-#        ${project_name} =    Get Text    ${project_link}
-#        Click Element    ${project_link}
-#        Sleep    2s
-#        Click Element    xpath=//a[contains(text(),'Test Plan')]
-#        Wait Until Page Contains Element    xpath=//*[contains(text(),'Create a test plan to manage and track all your test runs.')]
-#        ${body_text}=    Get Text    xpath=//body
-#        Should Contain    ${body_text}    Create a test plan to manage and track all your test runs.
-#        Log To Console       Text verified on Test Plan tab for project: ${project_name}
-#        #Go Back
-#        #Go Back
-#        Click Element    xpath://a[@href='/Dashboard/Index' and @class='arrow-back']
-#        Sleep    5 seconds
-#    END
 
 Verify Test Plan Button for All Projects
     Wait Until Page Contains Element    ${total_projects}
@@ -215,7 +195,7 @@ Create Test Suite
 	###################################################
 
 
-	#Create Session    my_session1    ${base_url}
+
 	${headers}=    Create Dictionary    Accept=*/*    Content-Type=application/x-www-form-urlencoded    charset=utf-8
 
     ${rand_data}=   Get Random String
@@ -230,7 +210,7 @@ Create Test Suite
 
     ${test_suite_id}=   Set Variable    ${json['result']['value']['result']['name']}
     Set Global Variable    ${test_suite_id}
-    #Log To Console    mess:${error_message}
+
     Log To Console    id:${test_suite_id}
     [Return]    ${test_suite_id}
 
@@ -253,9 +233,9 @@ Delete Testsuite
     Wait Until Page Contains Element    ${delete_test_suite_btn}
     Click Element    ${delete_test_suite_btn}
     Sleep    3 seconds
-    #Wait Until Element Is Enabled        ${confirm_delete_suite_btn}
+
     Click Element    ${confirm_delete_suite_btn}
-    #Wait Until Page Contains            xpath:(//span[text()='×'])[13]
+
     Sleep    3 seconds
     Click Element    xpath:(//span[text()='×'])[13]
 
@@ -271,10 +251,10 @@ Add Section
     Wait Until Element Is Visible         ${section_name_txt}   timeout=30s
     Input Text    ${section_name_txt}   ${section_name}
     Sleep    3 seconds
-    #Wait Until Page Contains Element    ${add_section}      timeout=30s
+
     Click Element    ${add_section}
     Sleep    3 seconds
-    #Wait Until Page Contains            xpath:(//span[text()='×'])[3]
+
     Click Element    ${sec_cnfrm_x}
 
 Editing Section
@@ -284,7 +264,7 @@ Editing Section
     Wait Until Element Is Visible         ${section_name_txt}
     Input Text    ${section_name_txt}   ${updated_section_name}
     Sleep    3 seconds
-    #Wait Until Page Contains    ${edit_sec_btn_save}    timeout=30s
+
     Click Element    ${edit_sec_btn_save}
 
 Deleting Section
@@ -296,10 +276,7 @@ Deleting Section
     Sleep    3 seconds
 
 Get Divs count
-#    Wait Until Page Contains Element    xpath://div[@class='card parent']
-#    ${count}=    Get Element Count      xpath://div[@class='card parent']
-#    #Log To Console         ${count} elements found
-#    RETURN  ${count}
+
 
     ${count}=   Get Text    id:spanSectionsCount
     RETURN  ${count}
@@ -321,14 +298,11 @@ Save and next
     Click Button    ${add_test_case_btn}
     Wait Until Page Contains    Add Test Case
     Input Text      ${add_test_case_title}    ${test_case_title}
-#    Select Frame    ${test_steps}
-#    Wait Until Page Contains Element    ${test_steps_body_txt}
-#    Input Text  ${test_steps_body_txt}    Your text goes here
-#    Unselect Frame
     Wait Until Page Contains Element    ${save_next_test_case_btn}      7 seconds
     Execute Javascript   document.getElementById("btnUpdateCaseWithNext").click()
 
 Preview Test Case
+     Sleep    3 seconds
      Add Test Case
      Wait Until Page Contains Element    ${test_case_section}    10 seconds
      Click Element    ${test_case_section}
@@ -391,7 +365,6 @@ Milestone Reporting
     Wait Until Page Contains Element    ${select_mile_drp}
     Select From List By Label    ${select_mile_drp}     Staging
     Wait Until Page Contains Element    ${generate_rep_btn}     7 seconds
-    #Click Button    ${generate_rep_btn}
     Execute Javascript   document.getElementById("milestoneReportBtn").click()
 
 Import Test Cases
