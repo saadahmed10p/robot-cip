@@ -19,13 +19,13 @@ Open My Browser
 Close My Browser
     Close Browser
 
-#Login
-#    [Arguments]    ${swag_user}   ${swag_password}
-#    Open My Browser
-#    Input Text    ${username}   ${swag_user}
-#    Input Text    ${password}   ${swag_password}
-#    Click Element   ${login_btn}
-#    Wait Until Page Contains        Swag Labs
+Login negatives
+    [Arguments]    ${swag_user}   ${swag_password}
+    Open My Browser
+    Input Text    ${username}   ${swag_user}
+    Input Text    ${password}   ${swag_password}
+    Click Element   ${login_btn}
+    Wait Until Page Contains        Swag Labs
 
 Get User Credentials
     [Arguments]    ${user}

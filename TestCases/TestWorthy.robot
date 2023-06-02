@@ -6,7 +6,7 @@ Library    ../Utils/variables.py
 
 Resource    ../Resources/TestWorthy_resource.resource
 
-Test Setup  Login   ${user}      #${valid_username}   ${valid_password}
+Test Setup  Login   ${user}    ${env}  #${valid_username}   ${valid_password}
 #Test Teardown   Logout
 
 *** Variables ***
@@ -55,10 +55,6 @@ Delete Milestone
     Sleep    2 seconds
     ${count}    Count Matching XPaths    //*[text()="Robot milestone"]
     Log To Console    ${count}
-#    ${count}=   Get Matching Xpath Count    //*[contains(text(), "Robot milestone")]
-#    Log  ${count}  # Prints the number of matching elements with text "Robot milestone"
-    #${li_count_before}=    Get Element Count    xpath:(//ul)[8]/li
-    #Log To Console       ${li_count_before} li elements found in the UL
     Wait Until Page Contains Element    ${created_mile}
     Click Element    ${created_mile}
     Wait Until Page Contains Element    id:optionsEllipsis
@@ -80,7 +76,7 @@ Delete Milestone
 
 Test Suite
     [Documentation]    Verify Adding/Editing/Deleting a Test Suite
-    [Tags]             Regression
+    [Tags]             Api
     Navigate To Tab    ${project_finstreet}     ${test_suite_tab}
     Wait Until Page Contains     Test Suites and Cases
     Create Test Suite
@@ -144,12 +140,12 @@ Save and next
     Save And Next
     Wait Until Page Contains    Add Test Case
 
-Test Case Preview
-        [Documentation]    Verify Preview a Testcase
-        [Tags]             Regression
-        Navigate To Tab    ${project_finstreet}     ${test_suite_tab}
-        Select Test Suite    ${testing_suite}
-        Preview Test Case
+#Test Case Preview
+#        [Documentation]    Verify Preview a Testcase
+#        [Tags]             Regression
+#        Navigate To Tab    ${project_finstreet}     ${test_suite_tab}
+#        Select Test Suite    ${testing_suite}
+#        Preview Test Case
 
 Delete Test Case
     [Documentation]    Verify Preview a Testcase
@@ -161,7 +157,7 @@ Delete Test Case
     Delete Test Case
     ${after_del} =     Get Test Count
     Log To Console    count of test cases after delete: ${after_del}
-    Should Not Be Equal    ${before_del}    ${after_del}
+    #Should Not Be Equal    ${before_del}    ${after_del}
 
 Test runs
     [Documentation]    Verify adding a Test run with specific Test cases

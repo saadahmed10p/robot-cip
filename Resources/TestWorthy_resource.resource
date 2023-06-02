@@ -34,6 +34,7 @@ ${test_names}      abc
 
 *** Keywords ***
 Open My Browser
+    [Arguments]    ${URL}
     Open Browser    ${URL}  ${browser}
     Maximize Browser Window
 
@@ -47,6 +48,13 @@ Close My Browser
 #    Input Text    ${password_txt}   ${password}
 #    Click Element   ${login_btn}
 
+Get Env
+    [Arguments]    ${env}
+    ${user_config_file}=    Set Variable    ${CURDIR}/../TestData/TestWorthy_Users.json
+    ${user_data}=    Evaluate    json.load(open('${user_config_file}'))    json
+    ${user_key}=    Set Variable    ${env}
+    ${environment}=    Set Variable    ${user_data['env']['${user_key}']['url']}
+    [Return]    ${environment}
 
 Get User Credentials
     [Arguments]    ${user}
@@ -58,12 +66,13 @@ Get User Credentials
     [Return]    ${username}    ${password}
 
 Login
-    [Arguments]    ${user}
+    [Arguments]    ${user}  ${env}
     ${username_txt}=    Set Variable    ${email_txt}
     ${password_txt}=    Set Variable    ${password_txt}
     ${login_btn}=    Set Variable    ${login_btn}
     ${username}    ${password}=  Get User Credentials  ${user}
-    Open My Browser
+    ${env}=     Get Env     ${env}
+    Open My Browser     ${env}
     Input Text    ${username_txt}    ${username}
     Input Text    ${password_txt}    ${password}
     Click Button    ${login_btn}
@@ -99,29 +108,6 @@ Find Text In All Projects
         Should Be True    ${text_found}
         [Return]    ${project_name}
     END
-
-#Verify Text on Test Plan Tab for All Projects
-#    Wait Until Page Contains Element    xpath://h6[@class='font-weight-bold mr-1' ]
-#    ${project_count_txt}    Get Text    xpath://h6[@class='font-weight-bold mr-1' ]
-#    ${project_count}=  Convert To Integer    ${project_count_txt}
-#    Log To Console    aa:${project_count}
-#    Wait Until Element Is Visible    ${PROJECT_XPATH}
-#    FOR    ${i}    IN RANGE    1    ${project_count}+1
-#        ${project_links} =    Get WebElements    ${PROJECT_XPATH}
-#        ${project_link} =    Set Variable    ${project_links[${i}-1]}
-#        ${project_name} =    Get Text    ${project_link}
-#        Click Element    ${project_link}
-#        Sleep    2s
-#        Click Element    xpath=//a[contains(text(),'Test Plan')]
-#        Wait Until Page Contains Element    xpath=//*[contains(text(),'Create a test plan to manage and track all your test runs.')]
-#        ${body_text}=    Get Text    xpath=//body
-#        Should Contain    ${body_text}    Create a test plan to manage and track all your test runs.
-#        Log To Console       Text verified on Test Plan tab for project: ${project_name}
-#        #Go Back
-#        #Go Back
-#        Click Element    xpath://a[@href='/Dashboard/Index' and @class='arrow-back']
-#        Sleep    5 seconds
-#    END
 
 Verify Test Plan Button for All Projects
     Wait Until Page Contains Element    ${total_projects}
@@ -329,6 +315,7 @@ Save and next
     Execute Javascript   document.getElementById("btnUpdateCaseWithNext").click()
 
 Preview Test Case
+     Sleep    3 seconds
      Add Test Case
      Wait Until Page Contains Element    ${test_case_section}    10 seconds
      Click Element    ${test_case_section}
