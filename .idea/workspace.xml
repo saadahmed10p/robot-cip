@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/TestWorthy_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/TestWorthy_resource.resource" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/swag_login_resource.resource" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/swag_login_resource.resource" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/TestWorthy.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/TestWorthy.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/TestWorthy_Negative.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/TestWorthy_Negative.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/allcart.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/allcart.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/api.robot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/fire.robot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/test.robot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/randoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/randoms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
+    <list default="true" id="14c960de-63ba-4aae-9043-1be9bb85670e" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;TestCases/TestWorthy.robot&#10;#&#9;TestCases/TestWorthy_Negative.robot">
+      <change beforePath="$PROJECT_DIR$/TestCases/swag_negative.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/swag_negative.robot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -531,7 +519,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685689924878</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="cleanup">
+      <created>1686723669564</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1686723669565</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;TestCases/TestWorthy.robot&#10;#&#9;TestCases/TestWorthy_Negative.robot">
+      <created>1686723942377</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1686723942377</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +571,8 @@
     <MESSAGE value="Added Testworthy testcases for deleting milestone" />
     <MESSAGE value="Added Testworthy testcases" />
     <MESSAGE value="cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;TestCases/TestWorthy.robot&#10;#&#9;TestCases/TestWorthy_Negative.robot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;TestCases/TestWorthy.robot&#10;#&#9;TestCases/TestWorthy_Negative.robot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

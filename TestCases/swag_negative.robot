@@ -18,7 +18,7 @@ ${config_file}    TestData/Users.json
 Failed login
     [Documentation]    Verify error message is displayed with invalid credentials
     [Tags]             Regression
-    #Login Negatives       ${swag_user_invalid}    ${swag_password_invalid}
+
     Login     ${user}
     Page Should Contain     ${invalid_creds_msg}    #Username and password do not match any user in this service
 
@@ -26,12 +26,12 @@ Failed login
 Locked user login
     [Documentation]    Verify error message is displayed when a locked user tries to login
     [Tags]             Regression
-    Login     ${user}   #${swag_user_locked}    ${swag_password}
+    Login     ${user}
     Wait Until Page Contains        ${locked_user_msg}       #Sorry, this user has been locked out.
 
 Checkout Page
     [Documentation]    User should not be able to move further without filling in contact details
-    Login       ${user}     #${swag_user}    ${swag_password}
+    Login       ${user}
     Click Function    ${add_to_cart_pdt1}
     ${count}=   Get Cart Badge
     Should Be Equal    ${count}    1
@@ -42,6 +42,3 @@ Checkout Page
     Page Should Contain     ${msg}[0]
     Logout
 
-#robot -d results -i Smoke TestCases/swag.robot
-#robot --include=smoke TestCases/swag.robot
-# robot -v user:user1 TestCases/swag.robot
